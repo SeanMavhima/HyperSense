@@ -1,0 +1,467 @@
+* {
+    /* create a reset/ often called universal selector for our page*/
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+
+:root{
+    --background-color: #FFFBF2;
+    --theme-darker: #775302;
+    --theme-light:  #5b6d52;
+    --theme-placeHolder: #999;
+    --btn-text: white;
+    --btn-shadow: 0px 0px 12px 2px rgb(1, 2, 0);
+    --btn-hover: #1a230c; 
+    --btn-inactive-text: rgb(5, 5, 5,0.7);
+    --box-shadow: 0px 0px 19px 3px gray;
+    --btn-shadow: 0px 0px 12px 2px rgb(1, 2, 0);;
+}
+
+/* ---- welcoming decision page css ----- */
+.container{
+    height: 100vh;
+    width:100vw;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    
+}
+body{
+    background-color: var(--background-color);
+    animation: myAnim 2s ease 0s 1 normal forwards;
+   
+}
+
+.logo img{
+    width: 260px;
+    height: 55px;
+}
+
+.socials i{
+    font-size: 30px;
+    margin-right: 5px;
+}
+
+.container .wrap{
+    /* background-color: aquamarine; */
+    margin: 70px;
+    display: flex;
+    width: 80%;
+    height:80vh;
+    min-width: 1000px;
+    min-height: 500px;
+    overflow:hidden;
+    position: relative;
+    box-shadow: 0px 0px 19px 3px gray;
+    
+}
+
+
+/* <---------- buttons ----------> */
+.btn-log {
+    display: flex;   
+    justify-content:space-evenly;
+    width: 100%;
+    padding: 0px 20px;
+
+}
+
+.btn-log button{
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: var(--theme-light);
+    color: white;
+    border:none;
+    font-size: 20px;
+    font-weight: 600;
+    box-shadow: var(--btn-shadow);
+    
+}
+
+.btn-log button:hover{
+    background-color: lightsteelblue;
+    /* border: 3px solid lightgray; */
+    box-shadow: var(--btn-shadow);
+    color: white;
+}
+.btn-log button a{
+    margin: 0px;
+    color: white;
+}
+
+.a_lower .left button a {
+    color: white;
+} 
+
+.a_lower .left button:hover {
+    border: none;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+/* <---------- DetailLog ------------> */
+
+
+
+/* ----------------- import ---------------- */
+.header{
+    height: 90vh;
+    background-position:center;
+    background-size: cover;
+    position: relative;
+    box-sizing: border-box;
+    width: 100vw;
+    min-width: 1320px;
+
+    
+}
+
+/* <----------- Navigation -----------> */
+nav{
+    display: flex;
+    padding: 4% 6%;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    width:100%;
+
+}
+
+nav img{
+    width: 270px;
+    height:65px;
+
+}
+
+ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.nav-links ul li{
+    float: left;
+    width: 125px;
+    height: 40px;
+    background-color:transparent;
+    opacity:0.8;
+    line-height: 40px;
+    text-align:center;
+    font-size: 20px;
+    margin-right: 2px;
+}
+
+.nav-links ul li a {
+    text-decoration:none;
+    color: white;
+    font-size: 13px;
+    font-weight:bolder
+}
+
+.nav-links ul .current a{
+    color:#FFA033;
+    border-bottom: red solid 2px;
+}
+
+.nav-links ul li::after{
+   content: '';
+   width: 0;
+   height:2px;
+   background:red;
+   display:block;
+   bottom:0;
+   left:0;
+   margin: left;
+   transition: width 0.5s;
+}
+
+.nav-links ul li:hover::after{
+    width: 100%;  
+} 
+
+ul li ul li{
+    color:black;
+    display:none;
+    background-color: #775302;
+} 
+
+#ham{
+    display: none;
+}
+
+ul li:hover ul li {
+    display: block;
+    margin-bottom: 2px;
+    border-bottom:6px black solid;
+    text-align: left;
+    padding-left:2px;
+    color:#FFA033;
+    background-color: #775302;
+}
+
+ul li a{
+    display:block;
+    text-decoration: none;
+    padding-left: 7px;
+}
+
+ul li a:hover{
+    cursor: pointer;
+    color:#FFA033;
+}
+.fields span{
+    color: red;
+    letter-spacing: 1px;
+    font-weight:bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.banner{
+    text-align: center;
+    justify-content: center;
+    margin-top: 100px;
+    color:white;
+}
+
+.banner h4 {
+    font-size: 27px;
+    color:#FFA033;
+}
+.banner h5{
+    font-size: 23px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+.banner h1 {
+    font-size: 80px;
+    
+}
+/* <-------- End of nav ---------> */
+
+/* <-------- slider ---------> */
+
+.slider-frame {
+    width: 100vw;
+    overflow:hidden;
+    height:1000px;
+    position:absolute;
+    z-index: -1;
+    min-width: 1320;
+    
+}
+
+@-webkit-keyframes slide_animation {
+    0% {right:0;}
+    10% {right: 100vw;}
+    20% {right: 200vw;}
+    30% {right: 300vw;}
+    40% {right: 400vw;}
+    50% {right: 500vw;}
+    60% {right: 400vw;}
+    70% {right: 300vw;}
+    80% {right: 200vw;}
+    90% {right: 100vw;}
+    100% {right: 0;}
+}
+
+.slider-images{
+    height:100%;
+    width:100vw;
+    display:flex;
+    position: relative;
+    -webkit-animation-name: slide_animation;
+    -webkit-animation-duration: 70s;
+    -webkit-animation-delay: 1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction:alternate;
+    -webkit-animation-play-state:running;
+    
+}
+
+.img-container {
+    height:100%;
+    position:relative;
+    width: 100%;
+    
+}
+img{
+    height:90vh;
+    width:100vw;
+    position: relative;
+    
+}
+
+#logo {
+    width: 150px;
+    height: 80px;
+}
+
+/* <----------- End of slider --------------> */
+
+/* <-------------- content page ----------------> */
+
+/* <-------------- index ----------------> */
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    position: relative;
+    height: auto;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: 100vw;
+    min-width: 1320px;
+
+  
+}
+
+.content .up{
+    width: auto;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.content i{
+    transform: rotate(90deg);
+    font-size: 100px;
+}
+
+.content h1{
+    font-size:60px;
+    color: black;
+}
+
+.content h3 {
+    font-size: 22px;
+    color: black;
+    letter-spacing: 1px;
+}
+
+/* <------------ about -------------> */
+
+.a_lower{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: space-between;
+    min-height: 550px;
+    margin-top: 100px;
+    padding: 0px 70px;
+    
+}
+
+@keyframes myAnim {
+	0% {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+
+
+.a_lower .left{
+    width: 60%;
+    height: 100%;
+
+}
+
+.left h4 {
+    font-size: 40px;
+    margin: 0px 0px 20px 0px;
+    
+}
+
+.left h4 {
+    font-size: 40px;
+    margin: 0px 0px 20px 0px;
+    
+}
+.left p {
+    line-height: 30px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    opacity: 0.7;
+    margin-bottom: 25px;
+    color: black;
+  
+}
+
+.left p a{
+    font-weight: bold;
+    opacity: 1;
+   color: purple;
+    
+}
+
+.a_lower .right{
+    width: 38%;
+    height: 80%;
+    position: relative;
+
+}
+
+.a_lower button{
+    height: 45px;
+    width: 25%;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--theme-light);
+}
+
+.a_lower button:hover{
+    background-color: var(--btn-hover);
+    border: 4px solid rgb(82, 81, 81);
+}
+
+.a_lower button a{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+   
+}
+
+.right:hover{
+    transform: translateY(-10px);
+}
+
+.right {
+    clip-path: polygon(50% 0%, 100% 18%,93% 100%, 7% 100%, 0% 20%)
+}
+
+.left #how {
+    color:black;
+    font-size: 18px;
+    font-weight:semibold ;
+    opacity: 100%;
+    
+}
+
+.highlight{
+    color:#FFA033;
+    
+}
+
+
+
+
+
+
